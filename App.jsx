@@ -1,10 +1,15 @@
 import React from "react"
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom/client"
+import Header from "./src/Components/Header"
+import Body from "./src/Components/Body"
+import Footer from "./src/Components/Footer"
 
 const App = ()=>{
     return(
         <>
-        <h1>Hello this is from react</h1>
+        <Header/>
+        <Body/>
+        <Footer/>
         </>
     )
 }
