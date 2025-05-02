@@ -1,6 +1,8 @@
 import React from "react"
 import logo from "../assets/images/hotelogo.jpg"
 const Header =()=>{
+    
+
     return (
         <>
         <div  style={{display:"flex",width:"100%",height:"100px",justifyContent:"space-around",alignItems:"center"}}>
