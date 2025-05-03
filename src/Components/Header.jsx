@@ -1,5 +1,6 @@
 import React from "react"
 import logo from "../assets/images/hotelogo.jpg"
+import { Link } from "react-router-dom"
 const Header =()=>{
     
 
@@ -13,11 +14,10 @@ const Header =()=>{
         </div>
         <div>
             <ul style={{display:"flex",listStyle:"none",gap:"30px",fontSize:"20px"}}>
-                <li>Home</li>
-                <li>About Us </li>
-                <li>Contact Us</li>
-                <li>Service</li>
-                <li>Cart</li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/cart">Cart</Link></li>
             </ul>
         </div>
         </div>

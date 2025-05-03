@@ -1,6 +1,7 @@
 import React ,{useState,useEffect} from "react"
 import RestrauntCard from "./RestruantCard";
-
+import Shimmer from "./shimmer";
+import { Link } from "react-router-dom";
 
 
 const Body = ()=>{
@@ -27,8 +28,10 @@ const Body = ()=>{
     useEffect(()=>{
         ApiCall();
     },[]);
-   if (!RestruantList) return null;
-    return(
+   
+    return (RestruantList.length===0) ? <Shimmer/> : (
+        
+    
         <>   
             <div className="Search-Bar" style={{margin:"20px",  display:"flex",gap:"22px"}}>
                 <input type="text" placeholder="Search Restraunt"  style={{width:"25%",height:"40px",fontSize:"20px",padding:"10px",borderRadius:"10px"}}value={SearchText} onChange={(e)=>{
@@ -48,9 +51,11 @@ const Body = ()=>{
 
             {filteredRestrauntList.map((data)=>{
                 return(
+                    <>
+                    <Link to={`/restraunt/${data.info.id}`} style={{color:"black",listStyle:"none",textDecoration:"none"}} > <RestrauntCard key={data.info.id } data={data.info}/></Link>
                     
-                    <RestrauntCard key={data.info.id } data={data.info}/>
                     
+                    </>
                 )
             })}
             </div>
