@@ -6,6 +6,7 @@ import {filteredRestraunt} from "../utils/helper"
 import useOnline from "../hooks/useOnline";
 import Lottie from 'lottie-react';
 import noInternetAnimation from "../utils/animation.json";
+import image from "../assets/images/image.jpg"
 
 const Body = ()=>{
     const [SearchText,setSearchText] = useState("");
@@ -61,16 +62,21 @@ const Body = ()=>{
 
             <h1>Some Good Restraunt around you ...</h1>
             <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center",gap:"20px"}}>
-
-            {filteredRestrauntList.map((data)=>{
+            {
+            }
+           {
+            filteredRestrauntList.length===0 ?( <img src={image} alt="no image found" style={{width:"800px",height:"500px",objectFit:"cover"}} />):(
+            filteredRestrauntList.map((data)=>{
                 return(
                     <>
-                    <Link to={`/restraunt/${data.info.id}`} style={{color:"black",listStyle:"none",textDecoration:"none"}} > <RestrauntCard key={data.info.id } data={data.info}/></Link>
                     
+                                  
+                    <Link to={`/restraunt/${data.info.id}`} style={{color:"black",listStyle:"none",textDecoration:"none"}} > <RestrauntCard key={data.info.id } data={data.info}/></Link>
                     
                     </>
                 )
-            })}
+            }))
+           }
             </div>
             
         </>
